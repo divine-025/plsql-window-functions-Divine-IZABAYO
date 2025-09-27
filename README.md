@@ -27,54 +27,48 @@ Relationships:
 
 ## SQL Queries & Window Functions
 
-### Success Criteria Implemented:
+## Success Criteria Implemented:
 1. **Top 5 Products per Region/Quarter** → `RANK()`, `DENSE_RANK()`, `PERCENT_RANK()`
 2. **Running Monthly Sales Total** → `SUM() OVER()`
 3. **Customer Count per Month** → `COUNT() OVER()`
 4. **3-Month Moving Average** → `AVG() OVER()`
 5. **Customer Segmentation** → `NTILE()`, `CUME_DIST()`, `LEAD()`, `LAG()`
 
-### Sample Queries for inserting data. 
+## Sample Queries for inserting data. 
 ```sql
--- Insert Customers
+
 INSERT INTO customers (name, email, phone, address) VALUES
 ('Jean Bosco', 'jean.bosco@gmail.com', '0788001111', 'Kigali, Rwanda'),
 ('Aline Uwase', 'aline.uwase@gmail.com', '0788002222', 'Huye, Rwanda'),
 ('Eric Mugisha', 'eric.mugisha@gmail.com', '0788003333', 'Musanze, Rwanda');
 
--- Insert Products
 INSERT INTO products (name, category, price, stock_quantity) VALUES
 ('Cotton Shirt', 'Clothing', 8000, 150),
 ('Traditional Kitenge', 'Fabric', 15000, 80),
 ('School Uniform', 'Clothing', 5000, 200),
 ('Bed Sheets', 'Home Textile', 12000, 60);
 
--- Insert Orders
 INSERT INTO orders (customer_id, order_date, total_amount) VALUES
 (1, '2025-09-20', 16000),
 (2, '2025-09-21', 15000),
 (3, '2025-09-22', 24000);
 
--- Insert Order Details
 INSERT INTO order_details (order_id, product_id, quantity, subtotal) VALUES
 (1, 1, 2, 16000),  -- Jean bought 2 Cotton Shirts
 (2, 2, 1, 15000),  -- Aline bought 1 Kitenge
 (3, 3, 3, 15000),  -- Eric bought 3 Uniforms
 (3, 4, 1, 9000);   -- Eric also bought 1 Bed Sheet
 
--- Insert Suppliers
 INSERT INTO suppliers (name, contact_person, phone, address) VALUES
 ('Rwanda Cotton Co.', 'Pauline Mukamana', '0788123456', 'Kigali SEZ, Rwanda'),
 ('East Africa Fabrics Ltd.', 'John Kamali', '0788234567', 'Kampala, Uganda'),
 ('Global Textiles Exporters', 'Li Wei', '0788345678', 'Guangzhou, China');
 
--- Insert Purchases
 INSERT INTO purchases (supplier_id, purchase_date, total_cost) VALUES
 (1, '2025-09-10', 500000),
 (2, '2025-09-12', 300000),
 (3, '2025-09-15', 800000);
 
--- Insert Employees
 INSERT INTO employees (name, role, salary) VALUES
 ('Claudine Umutoni', 'Tailor', 150000),
 ('Patrick Nshimiyimana', 'Sales Manager', 300000),
@@ -84,8 +78,6 @@ Insights
 # Results Analysis
 
 This analysis explores customer behavior, product performance, and sales trends in Rwanda’s textile sector using SQL window functions. The goal is to uncover actionable insights that support better production planning, marketing, and resource allocation.
-
----
 
 ## Descriptive Insights – What Happened?
 
@@ -104,8 +96,6 @@ This analysis explores customer behavior, product performance, and sales trends 
 - **Product Performance**  
   Products like School Uniforms and Traditional Kitenge had high prices and strong turnover, indicating high demand and profitability.
 
----
-
 ## Diagnostic Insights – Why It Happened?
 
 - **Revenue Concentration**  
@@ -123,11 +113,9 @@ This analysis explores customer behavior, product performance, and sales trends 
 - **Inventory Planning**  
   High-demand products should be prioritized in production and stock allocation to avoid shortages or overstocking.
 
----
-
 These insights were derived using PostgreSQL window functions and reflect real-world business challenges in Rwanda’s textile industry. They offer a foundation for data-driven decision-making and strategic growth.
 
-# references.
+## references.
 PostgreSQL Documentation: https://www.postgresql.org/docs/
 
 Rwanda Development Board (RDB) – Textile Industry Reports
@@ -150,7 +138,7 @@ Rwanda Development Board (RDB) – Textile & Apparel Sector Reports – https://
 
 National Institute of Statistics of Rwanda (NISR) – http://www.statistics.gov.rw
 
-# Author
+## Author
 Divine IZABAYO.
 
 
